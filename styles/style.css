@@ -8,16 +8,6 @@ html {
   block-size: 100%;
 }
 
-/* .pixel-perfect-image {
-  position: absolute;
-  width: 1200px;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.3;
-  filter: sepia(0.6);
-} */
-
 .page {
   inline-size: 1200px;
   block-size: 100%;
@@ -61,7 +51,7 @@ ol {
 .result__video-container {
   inline-size: 711px;
   block-size: 386px;
-  margin-bottom: 16px;
+  margin-bottom: 17px;
   position: relative;
 }
 
@@ -78,6 +68,7 @@ ol {
   justify-content: space-between;
   align-items: start;
   min-block-size: 54px;
+  padding-bottom: 2px;
 }
 
 .search-form__fieldset {
@@ -111,7 +102,6 @@ ol {
   border-bottom: 1px #fff solid;
   font-family: inherit;
   appearance: none;
-  /* opacity: 70%;  */
   cursor: text;
 }
 
@@ -132,12 +122,13 @@ ol {
 
 .result__video:focus-visible,
 .search-form__submit-button:focus-visible,
-.content__card-link:focus-visible{
+.content__card-link:focus-visible,
+.more-button:focus-visible{
   outline: 1px #fff solid;
   outline-offset: 1px;
 }
 
-.search-form__label:hover,
+.search-form__label:has(.search-form__pseudo-checkbox):hover,
 .button:hover,
 .content__list-item:hover {
   text-decoration: underline;
@@ -145,23 +136,20 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-  display: inline-block;
+  display: grid;
   inline-size: 19px;
   block-size: 19px;
-  background-color: black;
+  background-color: #000;
   border: 1px #fff solid;
   vertical-align: middle;
-  position: relative;
+  place-content: center;
 }
 
-.search-form__checkbox:checked+.search-form__pseudo-checkbox::before {
-  content: '';
-  position: absolute;
-  left: 1px;
-  top: 1px;
-  inline-size: 15px;
-  block-size: 15px;
-  background-color: white;
+input[type="checkbox"]:checked + span::before{
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
 }
 
 .search-form__checkbox-list {
@@ -189,24 +177,14 @@ ol {
 }
 
 .more-button {
-  inline-size: 100%;
+  /* inline-size: 100%; */
+  padding: 0 143px;
+  margin-left: 2px;
+  margin-bottom: 2px;
 }
 
 .button:active {
   background-color:#545050;
-}
-
-.content__list {
-  block-size: 298px;
-  overflow: auto;
-  position: relative;
-  /* Убрала полосы прокрутки в Firefox*/
-  scrollbar-width: none;
-}
-
-.content__list::-webkit-scrollbar {
-  /* Убрала полосы прокрутки в Chrome, Edge, Opera и Safari */
-  display: none;
 }
 
 .content__details {
@@ -215,9 +193,10 @@ ol {
 }
 
 .title {
-  margin-bottom: 26px;
+  padding-bottom: 24px;
   font-family: Oswald;
   line-height: 70.5px;
+  line-height: 71px;
   font-size: 75px;
   text-transform: uppercase;
 }
@@ -226,10 +205,25 @@ ol {
   color: grey;
 }
 
+.content__list {
+  block-size: 298px;
+  overflow: auto;
+  position: relative;
+  /* Убрала полосы прокрутки в Firefox*/
+  /* scrollbar-width: none; */
+  /* overflow-x: hidden; */
+  /* padding-bottom: 1px; */
+}
+
+.content__list::-webkit-scrollbar {
+  /* Убрала полосы прокрутки в Chrome, Edge, Opera и Safari */
+  display: none;
+}
+
 .content__list-item {
-  /* inline-size: 100%; */
+  /* display: flex; */
+  inline-size: 394px;
   block-size: 107px;
-  display: flex;
 }
 
 .content__list-item:not(li:last-child) {
@@ -237,13 +231,13 @@ ol {
 }
 
 .content__card-link {
-  text-decoration: none;
-  color: #fff;
-  margin: 2px;
   display: block;
+  margin: 2px 0 0 2px;
   padding: 2px;
   inline-size: 100%;
   block-size: 100%;
+  text-decoration: none;
+  color: #fff;
 }
 
 .content__card-link_current {
@@ -252,9 +246,10 @@ ol {
 
 .content__video-card {
   display: flex;
-  align-items: flex-start;
-  inline-size: 100%;
-  block-size: 107px;
+  align-items: start;
+  /* inline-size: 100%; */
+  block-size: 100%;
+  justify-content: space-between;
 }
 
 .content__video-card-title {
@@ -262,20 +257,18 @@ ol {
   text-transform: uppercase;
   line-height: 30px;
   font-weight: 700;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
 }
 
 .content__video-card-thumbnail {
-  /* inline-size: 194px;
-  block-size: 103px; */
   object-fit: cover;
-  /* inline-size: 100%; */
-  block-size: 100%;
-  /* flex-grow: 1; */
+  inline-size: 194px;
+  block-size: 103px;
 }
 
 .content__video-card-description-container {
-  flex-grow: 3;
+  flex-grow: 2;
+  block-size: 100%;
 }
 
 .content__video-card-description {
