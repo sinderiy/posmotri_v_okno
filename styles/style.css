@@ -102,20 +102,19 @@ ol {
   border-block-end: 1px #fff solid;
   font-family: inherit;
   appearance: none;
-  cursor: text;
 }
 
-.result__video-container,
-.result__video,
-.search-form__textfield,
-.button,
-.content__list,
-.content__list-item,
+.result__video-container:focus,
+.result__video:focus,
+.search-form__textfield:focus,
+.button:focus,
+.content__list:focus,
+.content__list-item:focus,
 .content__card-link:focus {
   outline: none;
 }
 
-.search-form__label:has(:focus-visible){
+.search-form__label:has(:focus-visible) {
   outline: 1px #fff solid;
   outline-offset: 1px;
 }
@@ -123,7 +122,7 @@ ol {
 .result__video:focus-visible,
 .search-form__submit-button:focus-visible,
 .content__card-link:focus-visible,
-.more-button:focus-visible{
+.more-button:focus-visible {
   outline: 1px #fff solid;
   outline-offset: 1px;
 }
@@ -132,7 +131,7 @@ ol {
 .button:hover,
 .content__list-item:hover {
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3.5px;
 }
 
 .search-form__pseudo-checkbox {
@@ -145,7 +144,7 @@ ol {
   place-content: center;
 }
 
-input[type="checkbox"]:checked + span::before{
+input[type="checkbox"]:checked+span::before {
   content: "";
   inline-size: 15px;
   block-size: 15px;
@@ -164,7 +163,6 @@ input[type="checkbox"]:checked + span::before{
   block-size: 34px;
   font-size: 18px;
   font-weight: 700;
-  font-style: normal;
   text-align: center;
   line-height: 21.6px;
   font-family: inherit;
@@ -182,8 +180,9 @@ input[type="checkbox"]:checked + span::before{
   margin-block-end: 2px;
 }
 
-.button:active {
-  background-color:#545050;
+.button:active,
+.content__card-link_current:active {
+  background-color: #545050;
 }
 
 .content__details {
@@ -194,29 +193,21 @@ input[type="checkbox"]:checked + span::before{
 .title {
   padding-block-end: 24px;
   font-family: Oswald;
-  /* line-height: 70.5px; */
   line-height: 71px;
   font-size: 75px;
   text-transform: uppercase;
 }
 
 .content__accent {
-  color: grey;
+  color: #545050;
 }
 
 .content__list {
   block-size: 298px;
   overflow: auto;
   position: relative;
-  /* Убрала полосы прокрутки в Firefox*/
-  /* scrollbar-width: none; */
   overflow-x: hidden;
 }
-
-/* .content__list::-webkit-scrollbar {
-  Убрала полосы прокрутки в Chrome, Edge, Opera и Safari
-  display: none;
-} */
 
 .content__list-item {
   inline-size: 394px;
@@ -238,22 +229,22 @@ input[type="checkbox"]:checked + span::before{
 }
 
 .content__card-link_current {
-  background-color:#545050;
+  background-color: #545050;
 }
 
 .content__video-card {
   display: flex;
+  justify-content: space-between;
   align-items: start;
   block-size: 100%;
-  justify-content: space-between;
 }
 
 .content__video-card-title {
-  font-size: 30px;
-  text-transform: uppercase;
-  line-height: 30px;
-  font-weight: 700;
   padding-block-end: 4px;
+  line-height: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .content__video-card-thumbnail {
@@ -263,8 +254,8 @@ input[type="checkbox"]:checked + span::before{
 }
 
 .content__video-card-description-container {
-  flex-grow: 2;
   block-size: 100%;
+  flex-grow: 2;
 }
 
 .content__video-card-description {
