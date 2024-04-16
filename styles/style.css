@@ -51,7 +51,7 @@ ol {
 .result__video-container {
   inline-size: 711px;
   block-size: 386px;
-  margin-bottom: 17px;
+  margin-block-end: 17px;
   position: relative;
 }
 
@@ -68,7 +68,7 @@ ol {
   justify-content: space-between;
   align-items: start;
   min-block-size: 54px;
-  padding-bottom: 2px;
+  padding-block-end: 2px;
 }
 
 .search-form__fieldset {
@@ -79,7 +79,7 @@ ol {
   font-weight: 400;
   line-height: 21.6px;
   font-size: 18px;
-  padding-bottom: 5px;
+  padding-block-end: 5px;
 }
 
 .search-form__label {
@@ -96,10 +96,10 @@ ol {
   color: #fff;
   font-size: 18px;
   line-height: 21.6px;
-  border-left: none;
-  border-right: none;
-  border-top: 1px #fff solid;
-  border-bottom: 1px #fff solid;
+  border-block-start: none;
+  border-block-end: none;
+  border-inline-start: 1px #fff solid;
+  border-inline-end: 1px #fff solid;
   font-family: inherit;
   appearance: none;
   cursor: text;
@@ -147,8 +147,8 @@ ol {
 
 input[type="checkbox"]:checked + span::before{
   content: "";
-  width: 15px;
-  height: 15px;
+  inline-size: 15px;
+  block-size: 15px;
   background-color: #fff;
 }
 
@@ -177,10 +177,9 @@ input[type="checkbox"]:checked + span::before{
 }
 
 .more-button {
-  /* inline-size: 100%; */
   padding: 0 143px;
-  margin-left: 2px;
-  margin-bottom: 2px;
+  margin-inline-start: 2px;
+  margin-block-end: 2px;
 }
 
 .button:active {
@@ -193,9 +192,9 @@ input[type="checkbox"]:checked + span::before{
 }
 
 .title {
-  padding-bottom: 24px;
+  padding-block-end: 24px;
   font-family: Oswald;
-  line-height: 70.5px;
+  /* line-height: 70.5px; */
   line-height: 71px;
   font-size: 75px;
   text-transform: uppercase;
@@ -211,23 +210,20 @@ input[type="checkbox"]:checked + span::before{
   position: relative;
   /* Убрала полосы прокрутки в Firefox*/
   /* scrollbar-width: none; */
-  /* overflow-x: hidden; */
-  /* padding-bottom: 1px; */
 }
 
-.content__list::-webkit-scrollbar {
-  /* Убрала полосы прокрутки в Chrome, Edge, Opera и Safari */
+/* .content__list::-webkit-scrollbar {
+  Убрала полосы прокрутки в Chrome, Edge, Opera и Safari
   display: none;
-}
+} */
 
 .content__list-item {
-  /* display: flex; */
   inline-size: 394px;
   block-size: 107px;
 }
 
 .content__list-item:not(li:last-child) {
-  margin-bottom: 30px;
+  margin-block-end: 30px;
 }
 
 .content__card-link {
@@ -247,7 +243,6 @@ input[type="checkbox"]:checked + span::before{
 .content__video-card {
   display: flex;
   align-items: start;
-  /* inline-size: 100%; */
   block-size: 100%;
   justify-content: space-between;
 }
@@ -257,7 +252,7 @@ input[type="checkbox"]:checked + span::before{
   text-transform: uppercase;
   line-height: 30px;
   font-weight: 700;
-  padding-bottom: 4px;
+  padding-block-end: 4px;
 }
 
 .content__video-card-thumbnail {
