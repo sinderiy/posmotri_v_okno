@@ -96,10 +96,10 @@ ol {
   color: #fff;
   font-size: 18px;
   line-height: 21.6px;
-  border-block-start: none;
-  border-block-end: none;
-  border-inline-start: 1px #fff solid;
-  border-inline-end: 1px #fff solid;
+  border-inline-start: none;
+  border-inline-end: none;
+  border-block-start: 1px #fff solid;
+  border-block-end: 1px #fff solid;
   font-family: inherit;
   appearance: none;
   cursor: text;
@@ -177,7 +177,7 @@ input[type="checkbox"]:checked + span::before{
 }
 
 .more-button {
-  padding: 0 143px;
+  padding: 0 141px;
   margin-inline-start: 2px;
   margin-block-end: 2px;
 }
@@ -210,6 +210,7 @@ input[type="checkbox"]:checked + span::before{
   position: relative;
   /* Убрала полосы прокрутки в Firefox*/
   /* scrollbar-width: none; */
+  overflow-x: hidden;
 }
 
 /* .content__list::-webkit-scrollbar {
